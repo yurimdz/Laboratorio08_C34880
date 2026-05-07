@@ -1,0 +1,8 @@
+{
+  "name": "Laboratorio08_C34880",
+  "version": "1.0.0",
+  "description": "Visualizador de series usando la API de TVMaze",
+  "scripts": {
+    "start": "npx serve src"
+  }
+}
