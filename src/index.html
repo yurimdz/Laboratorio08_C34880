@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TV Shows</title>
+    <link rel="stylesheet" href="index.css" />
+    <script type="module" src="index.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <span class="navbar-brand">TV<span>Shows</span></span>
+      <form class="search-form">
+        <input class="search-input" type="text" placeholder="Buscar serie..." />
+        <button type="submit">Buscar</button>
+      </form>
+    </nav>
+
+    <div class="content">
+      <header>
+        <div class="empty-state">
+          <div class="icon">🎬</div>
+          Buscá una serie para comenzar
+        </div>
+      </header>
+      <article class="episodes"></article>
+    </div>
+  </body>
+</html>

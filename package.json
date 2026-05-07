@@ -1,0 +1,5 @@
+{
+  "name": "tv-shows",
+  "version": "1.0.0",
+  "description": "Visualizador de series usando la API de TVMaze"
+}

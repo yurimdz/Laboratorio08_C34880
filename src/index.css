@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f5f3ee;
+  color: #1a1a1a;
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+}
+
+/* ── Navbar ──────────────────────────────── */
+.navbar {
+  background: #fff;
+  border-bottom: 1px solid #e8e4dc;
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar-brand {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+}
+
+.navbar-brand span {
+  color: #e05c2a;
+}
+
+/* ── Layout principal ─────────────────────── */
+.content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* ── Barra de búsqueda ───────────────────── */
+.search-form {
+  display: flex;
+  gap: 0;
+  max-width: 540px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1.5px solid #ddd8cf;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+
+.search-form:focus-within {
+  border-color: #e05c2a;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  background: transparent;
+  color: #1a1a1a;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: #aaa;
+}
+
+.search-form button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-left: 1.5px solid #e8e4dc;
+  background: #e05c2a;
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.search-form button:hover {
+  background: #c94e20;
+}
+
+/* ── Header / datos de la serie ──────────── */
+header {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.75rem;
+  border: 1px solid #e8e4dc;
+}
+
+header .poster {
+  border-radius: 10px;
+  width: 140px;
+  height: 196px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+header .show-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 0.25rem;
+}
+
+header h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #1a1a1a;
+}
+
+header .rating {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #888;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+header .rating-badge {
+  background: #fff8e6;
+  color: #b45309;
+  border: 1px solid #fde68a;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ── Grid de temporadas ───────────────────── */
+.episodes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.season {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* ── Celdas ───────────────────────────────── */
+.season-header,
+.episode {
+  --size: 2rem;
+  width: var(--size);
+  height: var(--size);
+  background: var(--color);
+  display: grid;
+  place-items: center;
+  margin: 2px;
+  border-radius: 8px;
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: #fff;
+  cursor: default;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: transform 0.1s, opacity 0.1s;
+}
+
+.episode:hover {
+  transform: scale(1.2);
+  opacity: 0.9;
+  z-index: 1;
+  position: relative;
+}
+
+.season-header {
+  background: #1a1a1a;
+  color: #f5f3ee;
+  border-radius: 8px;
+  font-size: 0.6rem;
+  letter-spacing: 0.03em;
+}
+
+/* ── Colores por rating ───────────────────── */
+.rating-0  { --color: #d1c7c7 }
+.rating-1  { --color: #c4a0a0 }
+.rating-2  { --color: #bf7a7a }
+.rating-3  { --color: #c05454 }
+.rating-4  { --color: #c53030 }
+.rating-5  { --color: #d04040 }
+.rating-6  { --color: #dd6b20 }
+.rating-7  { --color: #d4a017; color: #fff }
+.rating-8  { --color: #48bb78 }
+.rating-9  { --color: #2f855a }
+.rating-10 { --color: #1e6e40 }
+
+/* ── Estado vacío ─────────────────────────── */
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #aaa;
+  font-size: 0.95rem;
+}
+
+.empty-state .icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
